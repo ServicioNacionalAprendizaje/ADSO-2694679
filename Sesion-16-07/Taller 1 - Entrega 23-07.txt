@@ -1,0 +1,23 @@
+HALLAR EL AREA DE: 
+
+1.1.12.	Un triángulo.
+1.1.13.	Un rectángulo.
+1.1.14.	Una circunferencia.
+1.1.15.	Un trapecio.
+1.1.16.	Un rombo
+-	Área rombo = diagonal mayor * diagonal menor / 2
+1.1.17.	Un cuadrado
+-	Área cuadrado = base * altura; 
+
+HALLAR EL VOLUMEN DE
+
+1.1.18.	Un cubo.
+-	Volumen cubo = base * profundidad * altura
+1.1.19.	Una esfera.
+-	Volumen esfera = 4 / 3 * pi * radio * radio * radio.
+1.1.20.	Un cilindro.
+-	Volumen cilindro = pi * radio * radio * altura
+1.1.21.	Un cono.
+-	Volumen cono = pi * radio * radio * altura / 3.
+
+
