@@ -1,0 +1,22 @@
+1.3.2.	Leer un real e imprimir si el número es mayor a 5.
+1.3.3.	Leer un real e imprimir si su cuadrado es mayor a 5000.
+1.3.4.	Leer un real e imprimir su valor absoluto.
+1.3.5.	Leer un real e imprimir si el número es positivo o negativo.
+1.3.6.	Leer un real e imprimir si el número es mayor a 200 o no.
+1.3.7.	Leer un real e imprimir si el número está en el rango de 50 y 100.
+1.3.8.	Leer un real e imprimir si el número es par o impar.
+1.3.9.	Leer un entero e imprimir si el números par o impar y si es positivo o no.
+1.3.10.	Leer un entero e imprimir si el número está dentro del rango 200-300 y si es asi imprimir si es par o impar.
+1.3.11.	Leer dos números e imprimir cuál de los dos números es mayor y cual es menor.
+
+Nota: 
+* Aplicar POO a los 10.
+* Elegir un ejercicio->
+	* Grabar un video donde explique como realizar dicho ejercicio. 
+	[Tiempo: 4-8, Calidad: Que se entienda.]
+* Crear repositorio github[público o compartir a ariel5253@misena.edu.co].
+	Nombre del repositorio[JesusGonzalez-ADSO-2694679]
+
+======================================
+Enlace para compartir repositorio
+https://docs.google.com/spreadsheets/d/1PLmqe-LrgCG0_Sp4E1dQGa8_Fc0a2s-uUI3U1PbyCzk/edit?usp=sharing
