@@ -4,8 +4,8 @@
  */
 package View;
 
-import Utils.FunctionNumeric;
-import Utils.FunctionString;
+import Entity.ConversionGrados.ConversionGrados;
+
 
 /**
  *
@@ -13,9 +13,8 @@ import Utils.FunctionString;
  */
 public class Mostrar {
     public static void main(String[] args) {
-        FunctionString fs = new FunctionString();
-        FunctionNumeric fn = new FunctionNumeric();
-        
-        fn.InputNumericRangeScanner("Digite la nota: ",90.0,100.0);
+       ConversionGrados cg = new ConversionGrados();
+       cg.CelsiusFahrenheit();
+       cg.FahrenheitCelsius();
     }
 }
