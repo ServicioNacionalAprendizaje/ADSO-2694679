@@ -3,11 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Model.Entity;
+
 /**
  *
  * @author ariel
  */
-public class Factura {
-      
+public class DetalleFactura {
     
 }
