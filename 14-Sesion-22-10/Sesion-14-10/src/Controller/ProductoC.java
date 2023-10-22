@@ -33,6 +33,6 @@ public class ProductoC {
      public void EliminarRegistro(Long  id){
         Producto producto = new Producto();
         producto.setId(id);
-        producto.Eliminar();
+        producto.EliminarFisico();
     }
 }

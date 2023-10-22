@@ -93,17 +93,27 @@ public class Producto implements Accion{
         + "codigo = '" + this.getCodigo() + "', "
         + "nombre = '" + this.getNombre() + "', "
         + "precio = " + this.getPrecio() + ", "
-        + "cantidad = " + this.getCantidad() + " "
+        + "cantidad = " + this.getCantidad() + ", "
+        + "updated_at = NOW() "
         + "WHERE id = '" + this.getId() + "';";
         conn.ejecutarSQL(sql);
         conn.cerrarConexion();
     }
 
     @Override
-    public void Eliminar() {
+    public void EliminarFisico() {
         String sql; 
         
         sql = " DELETE FROM producto WHERE id = "+this.getId()+";";
+        conn.ejecutarSQL(sql);
+        conn.cerrarConexion();
+    }
+    
+    @Override
+    public void EliminarLogico() {
+        String sql; 
+        
+        sql = " UPDATE producto SET deleted_at = NOW() WHERE id = "+this.getId()+";";
         conn.ejecutarSQL(sql);
         conn.cerrarConexion();
     }

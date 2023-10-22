@@ -13,7 +13,7 @@ import Controller.ProductoC;
 public class ProductoV extends javax.swing.JFrame {
 
     /**
-     * Creates new form ProductoV
+     * Creates new form Pro
      */
     public ProductoV() {
         initComponents();
@@ -50,8 +50,6 @@ public class ProductoV extends javax.swing.JFrame {
         tDato = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setEnabled(false);
 
         lblId.setText("Id");
 
@@ -198,7 +196,7 @@ public class ProductoV extends javax.swing.JFrame {
             jpDatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpDatoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -219,7 +217,7 @@ public class ProductoV extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jpEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jpDato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,27 +236,18 @@ public class ProductoV extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        //Definir datos de entrada 
-        Long Id;
-        Id = Long.parseLong(txtId.getText());
-        
-        ProductoC productoC = new ProductoC();
-        productoC.EliminarRegistro(Id);
-    }//GEN-LAST:event_btnEliminarActionPerformed
-
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         String codigo;
         String nombre;
         Double precio;
         Long cantidad;
-        
+
         //Capturar datos de entrada
         codigo = txtCodigo.getText();
         nombre = txtNombre.getText();
         precio = Double.parseDouble(txtPrecio.getText());
         cantidad = Long.parseLong(txtCantidad.getText());
-        
+
         ProductoC productoC = new ProductoC();
         productoC.GuardarRegistro(codigo, nombre, precio, cantidad);
     }//GEN-LAST:event_btnGuardarActionPerformed
@@ -269,17 +258,26 @@ public class ProductoV extends javax.swing.JFrame {
         String nombre;
         Double precio;
         Long cantidad;
-        
+
         //Capturar datos de entrada
         Id = Long.parseLong(txtId.getText());
         codigo = txtCodigo.getText();
         nombre = txtNombre.getText();
         precio = Double.parseDouble(txtPrecio.getText());
         cantidad = Long.parseLong(txtCantidad.getText());
-        
+
         ProductoC productoC = new ProductoC();
         productoC.ModificarRegistro(Id,codigo, nombre, precio, cantidad);
     }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        //Definir datos de entrada
+        Long Id;
+        Id = Long.parseLong(txtId.getText());
+
+        ProductoC productoC = new ProductoC();
+        productoC.EliminarRegistro(Id);
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
         // TODO add your handling code here:
@@ -310,6 +308,7 @@ public class ProductoV extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ProductoV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

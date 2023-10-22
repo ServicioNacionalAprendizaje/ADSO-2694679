@@ -14,7 +14,9 @@ public interface Accion {
 
     void Modificar();
 
-    void Eliminar();
+    void EliminarFisico();
+
+    void EliminarLogico();
 
     Object Consultar();
 
