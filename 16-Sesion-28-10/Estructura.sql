@@ -54,3 +54,9 @@ create table ciudad(
 -- 15 Asia - Indonesia, Singapur, Filipinas, Sri Lanka, Nepal
 
 -- Cada equipo debe registrar los continentes, los paises seleccionados, 5 estados y 5 ciudades.
+
+
+-- MR
+-- SQL
+-- Backend (Modelo, Vista, Controller). 
+-- Saber usar la conexion.
