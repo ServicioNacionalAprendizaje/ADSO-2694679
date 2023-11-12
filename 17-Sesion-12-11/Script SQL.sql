@@ -79,4 +79,34 @@ SELECT * FROM matricula;
 
 -- Mostrar que materias tiene matriculadas el estudiante con su respectiva nota, (null o dato)
 
+SELECT 
+	CONCAT(e.nombre, e.apellido) as estudiante,
+	ma.nombre,
+	m.nota
+FROM 
+	estudiante e
+	INNER JOIN matricula m ON e.id = m.id_estudiante
+	INNER JOIN materia ma ON m.id_materia = m.id;
+
 -- (1-2) INNER JOIN - (3,4)LEFT JOIN - (5,6)RIGHT JOIN
+SELECT 
+	CONCAT(e.nombre, ' ', e.apellido) as estudiante,
+    ma.nombre as materia,
+    m.nota
+FROM 
+	estudiante e
+	INNER JOIN matricula m ON e.id = m.id_estudiante
+	INNER JOIN materia ma ON ma.id = m.id_materia
+WHERE m.nota IS NOT NULL;
+
+
+-- Conocer estudiantes sin nota
+SELECT 
+	CONCAT(e.nombre, ' ', e.apellido) as estudiante,
+    ma.nombre as materia,
+    m.nota
+FROM 
+	estudiante e
+	INNER JOIN matricula m ON e.id = m.id_estudiante
+	INNER JOIN materia ma ON ma.id = m.id_materia
+WHERE m.nota IS NULL;
