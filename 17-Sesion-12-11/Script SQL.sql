@@ -11,10 +11,10 @@ USE evidencia_conocimiento;
 CREATE TABLE estudiante(
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	tipo_documento VARCHAR(40) NOT NULL ,
-	documento VARCHAR(12) NOT NULL ,
+	documento VARCHAR(12) NOT NULL UNIQUE,
 	nombre VARCHAR(40) NOT NULL ,
 	apellido VARCHAR(40) NOT NULL ,
-	correo VARCHAR(40) NULL ,
+	correo VARCHAR(40) NULL UNIQUE,
 	direccion VARCHAR(60) NOT NULL ,
 	estado BIT DEFAULT 1	
 );
@@ -37,7 +37,8 @@ CREATE TABLE matricula(
     id_materia INT NOT NULL,
 	estado BIT DEFAULT 1,
     FOREIGN KEY (id_estudiante) REFERENCES estudiante(id),
-    FOREIGN KEY (id_materia) REFERENCES materia(id)
+    FOREIGN KEY (id_materia) REFERENCES materia(id),
+	UNIQUE (id_estudiante, id_materia)
 );
 
  
@@ -67,11 +68,15 @@ INSERT INTO  matricula (codigo, nota, observacion, estado, id_materia, id_estudi
 
 INSERT INTO  matricula (codigo, observacion, estado, id_materia, id_estudiante) VALUES
 ('ABC123', 'Aprobado', 1,2,1),
-('XYZ789', 'Regular', 1,3,1),
+('XYZ789', 'Regular', 1,3,2),
 ('DEF456', 'Bueno', 1,4,4),
-('GHI098', 'Suficiente', 1,4,4);
+('GHI098', 'Suficiente', 1,4,1);
 
 -- Consultas
 SELECT * FROM estudiante;
 SELECT * FROM materia;
 SELECT * FROM matricula;
+
+-- Mostrar que materias tiene matriculadas el estudiante con su respectiva nota, (null o dato)
+
+-- (1-2) INNER JOIN - (3,4)LEFT JOIN - (5,6)RIGHT JOIN
