@@ -1,0 +1,64 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "carrito-compra",
+    "dateExported": "2023-11-26T15:19:56.577Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "29381c3a-3056-473d-9770-0912771a5d79",
+            "name": "cliente",
+            "containerId": "",
+            "created": "2023-11-26T15:10:28.916Z",
+            "sortNum": 10000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "bd3fbe34-4a90-4ce4-bc32-cc07d354d789",
+            "colId": "39392cf1-5756-478b-b675-f2def7ad3d76",
+            "containerId": "29381c3a-3056-473d-9770-0912771a5d79",
+            "name": "FindAll",
+            "url": "http://localhost:9000/v1/api/cliente",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-26T15:10:57.240Z",
+            "modified": "2023-11-26T15:11:28.652Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "89858d92-1336-41f1-ab28-861187a58b20",
+            "colId": "39392cf1-5756-478b-b675-f2def7ad3d76",
+            "containerId": "29381c3a-3056-473d-9770-0912771a5d79",
+            "name": "FindById",
+            "url": "http://localhost:9000/v1/api/cliente/1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-11-26T15:11:58.380Z",
+            "modified": "2023-11-26T15:12:11.968Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0cbe9a90-c057-4eed-916a-7abbcadde569",
+            "colId": "39392cf1-5756-478b-b675-f2def7ad3d76",
+            "containerId": "29381c3a-3056-473d-9770-0912771a5d79",
+            "name": "save",
+            "url": "http://localhost:9000/v1/api/cliente",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-11-26T15:12:24.526Z",
+            "modified": "2023-11-26T15:17:44.016Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"estado\":false,\n  \"nombre\":\"Ana\",\n  \"correo\":\"ana@gmail.com\",\n  \"telefono\":\"34234\",\n  \"direccion\":\"Calle 1\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
