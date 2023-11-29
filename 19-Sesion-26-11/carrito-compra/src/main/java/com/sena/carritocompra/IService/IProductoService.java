@@ -33,6 +33,11 @@ public interface IProductoService {
 	 * **/
 	public void delete(Long id);
 	
+	/**
+	 * Método para eliminar lógico
+	 * **/
+	public void deletedAt(Long id);
+	
 	
 	
 	

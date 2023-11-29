@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sena.carritocompra.Entity.Cliente;
 import com.sena.carritocompra.Entity.Producto;
 import com.sena.carritocompra.IRepository.IProductoRepository;
 import com.sena.carritocompra.IService.IProductoService;
@@ -56,6 +57,20 @@ public class ProductoService implements IProductoService{
 	@Override
 	public void delete(Long id) {
 		repository.deleteById(id);		
+	}
+	@Override
+	public void deletedAt(Long id) {
+		//Consultar si existe el registro
+		Optional<Producto> op = repository.findById(id);
+		
+		if(op.isEmpty()){
+			System.out.print("Registro no existe para eliminar.");
+		}else {
+			Producto updateProducto = op.get();					
+			updateProducto.setFechaEliminacion(LocalDateTime.now());					
+			repository.save(updateProducto);
+		}	
+		
 	}
 
 }
