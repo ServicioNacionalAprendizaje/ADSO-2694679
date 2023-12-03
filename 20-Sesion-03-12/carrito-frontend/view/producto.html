@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Productos</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='../asset/css/global.css'>
+    <script src='../js/producto.js'></script>
+
+    <!-- Librerias -->
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/litera/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div id="inputData">
+            <form>
+                <fieldset>
+                    <legend>Legend</legend>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Código</label>
+                        <div class="col-sm-10">
+                            <input type="hidden" name="id" id="id" value="">
+                            <input type="text" class="form-control" name="codigo" id="codigo" value=""
+                                placeholder="Ingresar código">
+                        </div>
+
+                        <label class="col-sm-2 col-form-label">Nombre</label>
+                        <div class="col-sm-10">
+                            </br>
+                            <input type="text" class="form-control" name="nombre" id="nombre" value=""
+                                placeholder="Ingresar nombre">
+                        </div>
+
+                        <label class="col-sm-2 col-form-label">Precio</label>
+                        <div class="col-sm-10">
+                            </br>
+                            <input type="text" class="form-control" name="precio" id="precio" value=""
+                                placeholder="Ingresar nombre">
+                        </div>
+
+                        <label class="col-sm-2 col-form-label">Cantidad</label>
+                        <div class="col-sm-10">
+                            </br>
+                            <input type="text" class="form-control" name="cantidad" id="cantidad" value=""
+                                placeholder="Ingresar nombre">
+                        </div>
+
+                        <label class="col-sm-2 col-form-label">Estado</label>
+                        <div class="col-sm-10">
+                            </br>
+                            <select class="form-select" id="estado">
+                                <option selected>--Seleccione--</option>
+                                <option value="1">Activo</option>
+                                <option value="0">Inactivo</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div id="buttonData">
+            <br>
+            <button name="btnAgregar" onclick="Agregar()">Agragar</button>
+        </div>
+        <div id="outputData">
+            <!-- Aquí llegan los datos de la bd -->
+        </br>
+            <table class="table table-hover">
+                <thead>
+                    <tr class="table-dark">
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Estado</th>
+                        <th colspan="2">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>47632</td>
+                        <td>Frijol</td>
+                        <td>4.890</td>
+                        <td>34</td>
+                        <td>Activo</td>
+                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
+                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
+                    </tr>
+                    <tr>
+                        <td>47633</td>
+                        <td>Arroz</td>
+                        <td>3.450</td>
+                        <td>20</td>
+                        <td>Activo</td>
+                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
+                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
+                    </tr>
+                    <tr>
+                        <td>47634</td>
+                        <td>Maíz</td>
+                        <td>2.750</td>
+                        <td>25</td>
+                        <td>Activo</td>
+                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
+                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
+                    </tr>
+                    <tr>
+                        <td>47635</td>
+                        <td>Trigo</td>
+                        <td>5.200</td>
+                        <td>15</td>
+                        <td>Activo</td>
+                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
+                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
+                    </tr>
+                    <tr>
+                        <td>47636</td>
+                        <td>Lentejas</td>
+                        <td>3.750</td>
+                        <td>30</td>
+                        <td>Activo</td>
+                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
+                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
+                    </tr>
+                    <tr>
+                        <td>47637</td>
+                        <td>Quinoa</td>
+                        <td>6.500</td>
+                        <td>18</td>
+                        <td>Activo</td>
+                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
+                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
