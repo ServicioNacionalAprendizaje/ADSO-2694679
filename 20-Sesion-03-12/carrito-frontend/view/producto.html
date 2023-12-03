@@ -10,6 +10,9 @@
 
     <!-- Librerias -->
     <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/litera/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- ajax jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
@@ -62,10 +65,9 @@
         </div>
         <div id="buttonData">
             <br>
-            <button name="btnAgregar" onclick="Agregar()">Agragar</button>
+            <button name="btnAgregar" onclick="save()" class="btn btn-success">Agragar</button>
         </div>
-        <div id="outputData">
-            <!-- Aquí llegan los datos de la bd -->
+        <div id="outputData">           
         </br>
             <table class="table table-hover">
                 <thead>
@@ -78,61 +80,8 @@
                         <th colspan="2">Acciones</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>47632</td>
-                        <td>Frijol</td>
-                        <td>4.890</td>
-                        <td>34</td>
-                        <td>Activo</td>
-                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
-                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
-                    </tr>
-                    <tr>
-                        <td>47633</td>
-                        <td>Arroz</td>
-                        <td>3.450</td>
-                        <td>20</td>
-                        <td>Activo</td>
-                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
-                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
-                    </tr>
-                    <tr>
-                        <td>47634</td>
-                        <td>Maíz</td>
-                        <td>2.750</td>
-                        <td>25</td>
-                        <td>Activo</td>
-                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
-                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
-                    </tr>
-                    <tr>
-                        <td>47635</td>
-                        <td>Trigo</td>
-                        <td>5.200</td>
-                        <td>15</td>
-                        <td>Activo</td>
-                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
-                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
-                    </tr>
-                    <tr>
-                        <td>47636</td>
-                        <td>Lentejas</td>
-                        <td>3.750</td>
-                        <td>30</td>
-                        <td>Activo</td>
-                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
-                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
-                    </tr>
-                    <tr>
-                        <td>47637</td>
-                        <td>Quinoa</td>
-                        <td>6.500</td>
-                        <td>18</td>
-                        <td>Activo</td>
-                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
-                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
-                    </tr>
+                <tbody id="resultData">
+                     <!-- Aquí llegan los datos de la bd -->                    
                 </tbody>
             </table>
         </div>
@@ -140,3 +89,6 @@
 </body>
 
 </html>
+<script>
+   loadData();
+</script>
