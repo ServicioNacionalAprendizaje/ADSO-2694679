@@ -1,0 +1,67 @@
+Cosntruir promt: 
+1. Planteamieto del problema: Modulo de seguridad de cualquier aplicación. 
+
+2. Entidades propuestas, con sus respectivos atributos
+Persona[]
+Usuario[usuario, contrasenia, personaId]
+UsuarioRol[tabla pivote, usuarioId, rolId]
+Rol [nombre, descripcion]
+ModuloRol[tabla pivote, moduloId, rolId]
+Modulo [nombre, descripcion, ruta]
+ModuloVista[tabla pivote, moduloId, vistaId]
+Vista[nombre, descripcion, ruta]
+3. Generar cada entidad con sus respectivos atributos y en ingles. 
+
+4. Atributos genericos [id, state, createdAt, updatedAt, deletedAt, createdUser, updatedUser, deletedUser]
+
+
+========================
+Person:
+- id
+- firstName
+- lastName
+- email
+- phone
+- dateOfBirth
+- gender
+- address
+
+User
+id
+username
+password
+personId (foreign key referencing Person)
+
+UserRole
+id
+userId (foreign key referencing User)
+roleId (foreign key referencing Role)
+
+Role
+id
+name
+description
+
+ModuleRole
+id
+moduleId (foreign key referencing Module)
+roleId (foreign key referencing Role)
+
+Module
+id
+name
+description
+route
+
+ModuleView
+id
+moduleId (foreign key referencing Module)
+viewId (foreign key referencing View)
+
+View
+id
+name
+description
+route
+
+swagger
