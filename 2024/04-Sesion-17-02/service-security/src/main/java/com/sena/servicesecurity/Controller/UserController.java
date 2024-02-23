@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sena.servicesecurity.DTO.ApiResponseDto;
-import com.sena.servicesecurity.DTO.IPersonDto;
 import com.sena.servicesecurity.DTO.IUserDto;
 import com.sena.servicesecurity.Entity.User;
 import com.sena.servicesecurity.IService.IUserService;

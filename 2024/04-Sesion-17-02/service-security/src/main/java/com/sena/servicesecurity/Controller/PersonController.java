@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sena.servicesecurity.DTO.ApiResponseDto;
 import com.sena.servicesecurity.DTO.IPersonDto;
-import com.sena.servicesecurity.DTO.IRoleDto;
 import com.sena.servicesecurity.Entity.Person;
 import com.sena.servicesecurity.IService.IPersonService;
 

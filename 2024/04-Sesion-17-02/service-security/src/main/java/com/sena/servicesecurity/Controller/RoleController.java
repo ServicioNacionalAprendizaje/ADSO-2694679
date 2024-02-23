@@ -1,18 +1,15 @@
 package com.sena.servicesecurity.Controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sena.servicesecurity.DTO.ApiResponseDto;
 import com.sena.servicesecurity.DTO.IRoleDto;
-import com.sena.servicesecurity.DTO.IUserDto;
 import com.sena.servicesecurity.Entity.Role;
 import com.sena.servicesecurity.IService.IRoleService;
 
