@@ -1,5 +1,6 @@
 package com.sena.servicesecurity.Controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sena.servicesecurity.DTO.ApiResponseDto;
+import com.sena.servicesecurity.DTO.IPersonDto;
 import com.sena.servicesecurity.DTO.IUserDto;
 import com.sena.servicesecurity.Entity.User;
 import com.sena.servicesecurity.IService.IUserService;
@@ -31,4 +33,13 @@ public class UserController extends ABaseController<User,IUserService>{
             return ResponseEntity.internalServerError().body(new ApiResponseDto<Optional<IUserDto>>(e.getMessage(), null, false));
         }
     }
+	@GetMapping("/list")
+    public ResponseEntity<ApiResponseDto<List<IUserDto>>> show() {
+        try {
+            List<IUserDto> entity = service.getList();
+            return ResponseEntity.ok(new ApiResponseDto<List<IUserDto>>("Registro encontrado", entity, true));
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body(new ApiResponseDto<List<IUserDto>>(e.getMessage(), null, false));
+        }
+		}
 }

@@ -1,5 +1,6 @@
 package com.sena.servicesecurity.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +26,10 @@ public class UserService extends ABaseService<User> implements IUserService{
 	@Override
 	public Optional<IUserDto> getLogin(String username, String password) {
 		return repository.getLogin(username, password);
+	}
+
+	@Override
+	public List<IUserDto> getList() {
+		return repository.getList();
 	}	
 }

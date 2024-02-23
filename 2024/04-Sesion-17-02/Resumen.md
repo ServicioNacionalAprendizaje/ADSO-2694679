@@ -15,4 +15,14 @@
 
     # Actividad: 
 
-    * getListRole [id, name, description, state is True, deletedAt id null]
+    * getList [id, name, description, state is True, deletedAt id null]
+    * getList [id, person(nombre completo), numero documento]=> personas
+    * getList [id, username, person(nombre completo), state] = usuarios
+
+    SELECT 
+id,
+		concat(first_name,'  ',last_name) as person
+	FROM 
+		person
+	WHERE 
+        deleted_at IS NULL
