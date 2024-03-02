@@ -1,0 +1,83 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Prueba",
+    "dateExported": "2024-03-02T22:29:28.092Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "bf585d5e-96bc-485d-a587-51e8e80ff7b6",
+            "name": "Customer",
+            "containerId": "",
+            "created": "2024-03-02T22:18:25.851Z",
+            "sortNum": 10000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "b7d0e67a-d01e-41d5-88e9-71ca15a506cd",
+            "colId": "8852bdf0-1f8a-46f2-8a1d-727f55795fe4",
+            "containerId": "bf585d5e-96bc-485d-a587-51e8e80ff7b6",
+            "name": "all",
+            "url": "http://localhost:9000/v1/api/customer",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-02T22:18:46.141Z",
+            "modified": "2024-03-02T22:19:15.097Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c8db9047-8dab-40fd-beb6-5b055a395759",
+            "colId": "8852bdf0-1f8a-46f2-8a1d-727f55795fe4",
+            "containerId": "bf585d5e-96bc-485d-a587-51e8e80ff7b6",
+            "name": "findById",
+            "url": "http://localhost:9000/v1/api/customer/2",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-02T22:19:24.547Z",
+            "modified": "2024-03-02T22:21:10.467Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "bde25c69-2221-4141-b06c-a1fa33f00427",
+            "colId": "8852bdf0-1f8a-46f2-8a1d-727f55795fe4",
+            "containerId": "bf585d5e-96bc-485d-a587-51e8e80ff7b6",
+            "name": "save",
+            "url": "http://localhost:9000/v1/api/customer",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-03-02T22:19:48.839Z",
+            "modified": "2024-03-02T22:20:53.512Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Jesús\",\n  \"email\":\"ariel5253@gmail.com\",\n  \"phone\":\"30134343\",\n  \"address\":\"Calle 10\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "43cec806-ff16-425e-8463-2ac2c3065b50",
+            "colId": "8852bdf0-1f8a-46f2-8a1d-727f55795fe4",
+            "containerId": "bf585d5e-96bc-485d-a587-51e8e80ff7b6",
+            "name": "save Copy",
+            "url": "http://localhost:9000/v1/api/customer/1",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-03-02T22:21:15.069Z",
+            "modified": "2024-03-02T22:21:34.050Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Camila\",\n  \"email\":\"camila@gmail.com\",\n  \"phone\":\"3432423\",\n  \"address\":\"Calle 12\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
