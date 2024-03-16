@@ -1,27 +1,28 @@
 package com.sena.servicesecurity.Service;
 
+import com.sena.servicesecurity.Entity.ABaseEntity;
+import com.sena.servicesecurity.IRepository.IBasePivoteRepository;
+import com.sena.servicesecurity.IRepository.IBaseRepository;
+import com.sena.servicesecurity.Service.IService.IBasePivoteService;
+import com.sena.servicesecurity.Service.IService.IBaseService;
+import org.springframework.beans.BeanUtils;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
-
-import org.springframework.beans.BeanUtils;
-
-import com.sena.servicesecurity.Entity.ABaseEntity;
-import com.sena.servicesecurity.IRepository.IBaseRepository;
-import com.sena.servicesecurity.Service.IService.IBaseService;
 
 /**
  * Abstract base service providing common CRUD operations for entities.
  * @param <T> The type of entity extending ABaseEntity.
  */
-public abstract class ABaseService<T extends ABaseEntity> implements IBaseService<T> {
+public abstract class ABasePivoteService<T> implements IBasePivoteService<T> {
 
     /**
      * Retrieves the repository associated with the entity.
-     * @param <T>
+     * @param <U>
      * @return The repository associated with the entity.
      */
-    protected abstract  IBaseRepository<T, Long> getRepository();
+    protected abstract IBasePivoteRepository<T, Long> getRepository();
     
     /**
      * Retrieves all entities.
@@ -68,8 +69,6 @@ public abstract class ABaseService<T extends ABaseEntity> implements IBaseServic
     @Override
     public T save(T entity) throws Exception {
         try {
-            entity.setCreatedAt(LocalDateTime.now());
-            entity.setCreatedBy((long)1); //Cuanto esté el loggin, se debe enviar el ID del usuario con Auth
             return getRepository().save(entity);
         } catch (Exception e) {
             // Captura la excepción
@@ -89,16 +88,12 @@ public abstract class ABaseService<T extends ABaseEntity> implements IBaseServic
 
         if (op.isEmpty()) {
             throw new Exception("Registro no encontrado");
-        } else if (op.get().getDeletedAt() != null) {
-            throw new Exception("Registro inhabilitado");
         }
 
         T entityUpdate = op.get();
 
         String[] ignoreProperties = { "id", "createdAt", "deletedAt", "createdBy", "deletedBy" };
         BeanUtils.copyProperties(entity, entityUpdate, ignoreProperties);
-        entityUpdate.setUpdatedAt(LocalDateTime.now());
-        entityUpdate.setUpdatedBy((long)1); //Cuanto esté el loggin, se debe enviar el ID del usuario con Auth
         getRepository().save(entityUpdate);
     }
 
@@ -116,12 +111,6 @@ public abstract class ABaseService<T extends ABaseEntity> implements IBaseServic
         }
 
         T entityUpdate = op.get();
-        entityUpdate.setDeletedAt(LocalDateTime.now());
-        entityUpdate.setDeletedBy((long)1); //Cuanto esté el loggin, se debe enviar el ID del usuario con Auth
-
         getRepository().save(entityUpdate);
     }
-
-    
-  
 }

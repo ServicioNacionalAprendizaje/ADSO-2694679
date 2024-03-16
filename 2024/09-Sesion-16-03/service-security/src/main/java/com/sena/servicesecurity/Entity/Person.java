@@ -7,7 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "person")
+@Table(name = "person", schema = "security")
 public class Person extends ABaseEntity {
     
     @Column(name = "first_name", length = 50, nullable = false)

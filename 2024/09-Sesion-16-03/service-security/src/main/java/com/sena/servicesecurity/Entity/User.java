@@ -1,14 +1,13 @@
 package com.sena.servicesecurity.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name = "user")
+@Table(name = "user", schema = "security")
 public class User extends ABaseEntity {
     
     @Column(name = "username", nullable = false, unique = true)
@@ -20,6 +19,11 @@ public class User extends ABaseEntity {
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = "person_id", nullable = false, unique = true)
     private Person person;
+
+	@NotNull
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "user_role", schema = "security", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+	private Set<Role> role = new HashSet<>();
 
 	public String getUsername() {
 		return username;

@@ -1,11 +1,13 @@
 package com.sena.servicesecurity.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name = "role")
+@Table(name = "role", schema = "security")
 public class Role extends ABaseEntity {
     
     @Column(name = "name", nullable = false, unique = true)
@@ -13,6 +15,11 @@ public class Role extends ABaseEntity {
     
     @Column(name = "description", nullable = false)
     private String description;
+
+	@NotNull
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "role_module", schema = "security", joinColumns = @JoinColumn(name = "role_id"), inverseJoinColumns = @JoinColumn(name = "module_id"))
+	private Set<Module> module = new HashSet<>();
 
 	public String getName() {
 		return name;
