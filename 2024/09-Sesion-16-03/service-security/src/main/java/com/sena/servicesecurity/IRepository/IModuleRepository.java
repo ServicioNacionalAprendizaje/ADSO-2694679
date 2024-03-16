@@ -19,5 +19,18 @@ public interface IModuleRepository extends IBaseRepository<Module, Long>{
 			+ "	module "
 			+ "	WHERE "
 			+ " deleted_at IS NULL", nativeQuery = true)
-	List<IModuleDto> getList();
+	List<IModuleDto> getList();	
+	
+	@Query(value = " SELECT "
+			+ "	id,"
+			+ "	name as module,"
+			+ " route, "
+			+ " description, "
+			+ " state "
+			+ "	FROM "
+			+ "	module "
+			+ "	WHERE "
+			+ " deleted_at IS NULL", nativeQuery = true)
+	List<Object[]> getDList();
+	
 }

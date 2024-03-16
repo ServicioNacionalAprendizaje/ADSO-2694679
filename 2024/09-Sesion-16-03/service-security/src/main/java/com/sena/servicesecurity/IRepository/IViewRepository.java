@@ -22,4 +22,16 @@ public interface IViewRepository extends IBaseRepository<View, Long>{
 			+ "	WHERE "
 			+ " deleted_at IS NULL", nativeQuery = true)
 		List<IViewDto> getList();
+	
+	@Query(value = " SELECT "
+			+ "	id,"
+			+ "	name as view,"			
+			+ " description, "
+			+ " route, "
+			+ " state "
+			+ "	FROM "
+			+ "	view "
+			+ "	WHERE "
+			+ " deleted_at IS NULL", nativeQuery = true)
+	List<Object[]> getDList();
 }

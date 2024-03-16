@@ -21,4 +21,15 @@ public interface IRoleRepository extends IBaseRepository<Role, Long>{
 			+ "	WHERE "
 			+ " deleted_at IS NULL", nativeQuery = true)
 	List<IRoleDto> getList();
+	
+	@Query(value = " SELECT "
+			+ "	id,"
+			+ "	name as role,"
+			+ " description, "
+			+ " state "
+			+ "	FROM "
+			+ "	role "
+			+ "	WHERE "
+			+ " deleted_at IS NULL", nativeQuery = true)
+	List<Object[]> getDList();
 }

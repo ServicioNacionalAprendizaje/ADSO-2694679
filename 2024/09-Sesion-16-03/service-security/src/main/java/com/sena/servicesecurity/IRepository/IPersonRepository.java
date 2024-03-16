@@ -21,4 +21,13 @@ public interface IPersonRepository extends IBaseRepository<Person, Long>{
 				+ "	WHERE  "
 				+ " deleted_at IS NULL", nativeQuery = true)
 		List<IPersonDto> getList();
+		
+		@Query(value = " SELECT  "
+				+ " id, "
+				+ " concat(first_name,'  ',last_name) as person "
+				+ "	FROM  "
+				+ "	person "
+				+ "	WHERE  "
+				+ " deleted_at IS NULL", nativeQuery = true)
+		List<Object[]> getDList();
 }

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.sena.servicesecurity.DTO.ApiResponseDto;
 import com.sena.servicesecurity.Entity.ABaseEntity;
-import com.sena.servicesecurity.IService.IBaseService;
+import com.sena.servicesecurity.Service.IService.IBaseService;
 
 /**
  * Abstract base controller providing common CRUD endpoints for entities.
@@ -111,5 +111,7 @@ public class ABaseController<T extends ABaseEntity, S extends IBaseService<T>> {
         } catch (Exception e) {
             return ResponseEntity.internalServerError().body(new ApiResponseDto<T>(e.getMessage(), null, false));
         }
-    }
+    }  
+    
+    
 }

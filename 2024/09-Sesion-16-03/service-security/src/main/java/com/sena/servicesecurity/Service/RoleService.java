@@ -9,7 +9,7 @@ import com.sena.servicesecurity.DTO.IRoleDto;
 import com.sena.servicesecurity.Entity.Role;
 import com.sena.servicesecurity.IRepository.IBaseRepository;
 import com.sena.servicesecurity.IRepository.IRoleRepository;
-import com.sena.servicesecurity.IService.IRoleService;
+import com.sena.servicesecurity.Service.IService.IRoleService;
 
 @Service
 public class RoleService extends ABaseService<Role> implements IRoleService{

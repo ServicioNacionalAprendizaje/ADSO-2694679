@@ -14,7 +14,7 @@ import com.sena.servicesecurity.DTO.ApiResponseDto;
 import com.sena.servicesecurity.DTO.IModuleDto;
 
 import com.sena.servicesecurity.Entity.Module;
-import com.sena.servicesecurity.IService.IModuleService;
+import com.sena.servicesecurity.Service.IService.IModuleService;
 
 @CrossOrigin(origins = "*")
 @RestController

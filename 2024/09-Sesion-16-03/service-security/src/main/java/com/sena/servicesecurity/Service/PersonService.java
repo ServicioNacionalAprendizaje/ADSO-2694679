@@ -9,7 +9,7 @@ import com.sena.servicesecurity.DTO.IPersonDto;
 import com.sena.servicesecurity.Entity.Person;
 import com.sena.servicesecurity.IRepository.IBaseRepository;
 import com.sena.servicesecurity.IRepository.IPersonRepository;
-import com.sena.servicesecurity.IService.IPersonService;
+import com.sena.servicesecurity.Service.IService.IPersonService;
 
 
 @Service

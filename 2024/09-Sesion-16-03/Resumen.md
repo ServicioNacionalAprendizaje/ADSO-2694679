@@ -86,3 +86,22 @@ El contrato de este DTO el llenado con la capa responsable de manejar los datos,
 De acuerdo con lo anterior, el DTO `IModuleDto` esta disponible para llenar  los métodos `String getName(); String getRoute();  String getDescription();`, por lo tanto, estos encapsulamientos, pueden ser llenados únicamente si la consulta estan con los nombres explicitos. Cabe resaltar que todo método de encapsulamiento inicia por `get` y son escritos en `calmelCase`, es decir, para los anteriores métodos, los atributos correspondientes sin `name, route y description`.
 
 Si se revisa la anterior consulta, esta devuelve `id, module, route, description y state`, por tanto, dicho DTO no esta en capacidad de regresar todos los datos, es decir, `id, module y state` se perderán.
+
+# Otro ejemplo: 
+
+```java
+    public interface IModule2Dto {
+        String getReferencia();        
+        String getModulos();
+    }
+```
+
+```java
+    @Query(value = " SELECT "                
+                + " id as referencia, "+
+                + " concat(name,' '+descripcion) as modulos"+
+                + "	FROM "
+                + "	module "
+                + "	WHERE "
+                + " deleted_at IS NULL", nativeQuery = true)
+	List<IModule2Dto> getList();

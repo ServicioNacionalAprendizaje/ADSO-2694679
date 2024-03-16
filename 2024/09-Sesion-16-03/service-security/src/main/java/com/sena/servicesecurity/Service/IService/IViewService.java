@@ -1,4 +1,4 @@
-package com.sena.servicesecurity.IService;
+package com.sena.servicesecurity.Service.IService;
 
 import java.util.List;
 

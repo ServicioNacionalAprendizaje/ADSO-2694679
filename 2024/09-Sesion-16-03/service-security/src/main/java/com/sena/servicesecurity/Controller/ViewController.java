@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sena.servicesecurity.DTO.ApiResponseDto;
 import com.sena.servicesecurity.DTO.IViewDto;
 import com.sena.servicesecurity.Entity.View;
-import com.sena.servicesecurity.IService.IViewService;
+import com.sena.servicesecurity.Service.IService.IViewService;
 
 @CrossOrigin(origins = "*")
 @RestController

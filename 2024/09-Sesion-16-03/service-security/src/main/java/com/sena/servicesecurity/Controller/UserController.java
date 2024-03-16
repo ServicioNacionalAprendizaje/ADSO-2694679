@@ -1,19 +1,19 @@
 package com.sena.servicesecurity.Controller;
 
-import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sena.servicesecurity.DTO.ApiResponseDto;
 import com.sena.servicesecurity.DTO.IUserDto;
 import com.sena.servicesecurity.Entity.User;
-import com.sena.servicesecurity.IService.IUserService;
+import com.sena.servicesecurity.Service.IService.IUserService;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -23,22 +23,20 @@ public class UserController extends ABaseController<User,IUserService>{
         super(service, "User");
     }
 	
-	@GetMapping("/login")
-    public ResponseEntity<ApiResponseDto<Optional<IUserDto>>> show(@RequestParam String username, @RequestParam String password) {
-        try {
-            Optional<IUserDto> entity = service.getLogin(username, password);
-            return ResponseEntity.ok(new ApiResponseDto<Optional<IUserDto>>("Registro encontrado", entity, true));
-        } catch (Exception e) {
-            return ResponseEntity.internalServerError().body(new ApiResponseDto<Optional<IUserDto>>(e.getMessage(), null, false));
-        }
-    }
-	@GetMapping("/list")
-    public ResponseEntity<ApiResponseDto<List<IUserDto>>> show() {
-        try {
-            List<IUserDto> entity = service.getList();
-            return ResponseEntity.ok(new ApiResponseDto<List<IUserDto>>("Registro encontrado", entity, true));
-        } catch (Exception e) {
-            return ResponseEntity.internalServerError().body(new ApiResponseDto<List<IUserDto>>(e.getMessage(), null, false));
-        }
-		}
+	
+	
+	@PostMapping("/login")
+	public ResponseEntity<ApiResponseDto<Optional<IUserDto>>> show(@RequestBody Map<String, String> loginData) {
+	    try {
+	        String username = loginData.get("username");
+	        String password = loginData.get("password");
+	        
+	        Optional<IUserDto> entity = service.getUserWithViews(username, password);
+	        return ResponseEntity.ok(new ApiResponseDto<>("Registro encontrado", entity, true));
+	    } catch (Exception e) {
+	        return ResponseEntity.internalServerError().body(new ApiResponseDto<>(e.getMessage(), null, false));
+	    }
+	}
+
+	
 }
